@@ -8,11 +8,11 @@ import { v4 as uuid } from 'uuid';
 export class BrandsService {
 
   private brands: Brand[]=[
-    {
-      id: uuid(),
-      name: 'Toyota',
-      createdAt: new Date().getTime()
-    }
+    // {
+    //   id: uuid(),
+    //   name: 'Toyota',
+    //   createdAt: new Date().getTime()
+    // }
   ]
 
 
@@ -28,7 +28,7 @@ export class BrandsService {
     }
 
   findAll() {
-    return `This action returns all brands`;
+    return this.brands;
   }
 
   findOne(id: string) {
@@ -56,4 +56,8 @@ export class BrandsService {
     this.brands = this.brands.filter(brand => brand.id !== id);
     return `This action removes a #${id} brand`;
   }
+
+      fillCarsWithSeedData( brands: Brand[]){
+          this.brands = brands;
+      }
 }
